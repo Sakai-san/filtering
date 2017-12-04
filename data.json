@@ -1,0 +1,48 @@
+[
+  {
+    "last": "Blum",
+    "first": "Guido",
+    "birthDate": "1953-10-31",
+    "jobExperiences": [
+      {
+        "startDate": "2005-10-20",
+        "endtDate": "",
+        "company": "Goo Inc.",
+        "JobDescription": "Lead architect",
+        "keywords": [
+          "Python",
+          "Flask"
+        ]
+      }
+    ]
+  },
+  {
+    "last": "Rubattel",
+    "first": "Thomas",
+    "birthDate": "1979-04-22",
+    "jobExperiences": [
+      {
+        "startDate": "2017-01-01",
+        "endtDate": "",
+        "company": "Ringier Axel Springer Schweiz AG.",
+        "JobDescription": "Web developer",
+        "keywords": [
+          "ES2015",
+          "React",
+          "Frontend",
+          "JSX",
+          "Redux",
+        ]
+      },
+    ],
+    "education": [
+      {
+        "startDate": "2012-01-01",
+        "endtDate": "2015-01-01",
+        "title": "Master of Science",
+        "school": "University of Lausane",
+        "speciality": "Information systems",
+      },
+    ],
+  }
+]

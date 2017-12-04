@@ -27,6 +27,16 @@ triplets.forEach ( (triplet) => {
   console.log("_______________________");
 });
 
+console.log( "dot product", utils.dotProduct( [2, 3, 0], [3, 5, 9]) );
+
+const allProfiles = [
+  {
+    name: "thomas",
+    age : 38,
+    expectedSalary: 200000,
+    gender: 'male',
+  }
+]
 
 const wishedProfile = {
   age : 24,

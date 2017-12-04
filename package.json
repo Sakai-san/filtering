@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "underscore": "*"
+    "lodash": "^4.17.4"
   },
   "name": "@studybyyourselfdotcom/filterning",
   "version": "1.0.0",

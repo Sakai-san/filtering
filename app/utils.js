@@ -12,9 +12,28 @@ const _ = require('../node_modules/underscore');
  const vectorNorm = ( vector ) => {
   const squareSum = vector
     .map( (component) => component*component)
-    .reduce( (memo, square) => memo+square, 0 );
+    .reduce( (memo, square) => memo+square );
   return Math.sqrt(squareSum);
 }
+
+const triplets =  [
+  [3, 4, 5],
+  [5, 12, 13],
+  [8, 15, 17],
+  [7, 24, 25],
+  [20, 21, 29],
+  [12, 35, 37],
+  [9, 40, 41],
+  [28, 45, 53],
+  [11, 60, 61],
+  [16, 63, 65],
+  [33, 56, 65],
+  [48, 55, 73],
+  [13, 84, 85],
+  [36, 77, 85],
+  [39, 80, 89],
+  [65, 72, 97],
+];
 
 
 const Candidate =  function(name, birthDate) {
@@ -36,6 +55,13 @@ const Job =  function(startDate, endDate, jobDescription, company) {
   }
 };
 
+
+// test pythagoras
+triplets.forEach ( (triplet) => {
+  console.log("solution : " +triplet[2]);
+  console.log( vectorNorm(triplet.slice(2) ));
+  console.log("_______________________");
+});
 
 // test candidate
 const candidate1 = new Candidate( "sebastian", "1980-10-12" );

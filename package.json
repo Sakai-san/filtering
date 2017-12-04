@@ -1,5 +1,17 @@
 {
   "dependencies": {
     "underscore": "*"
-  }
+  },
+  "name": "@studybyyourselfdotcom/filterning",
+  "version": "1.0.0",
+  "description": "Trial aiming to implement an use case of filtering",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": "https://github.com/Sakai-san/filtering.git",
+  "author": "Sakai Toma <o_edo@hotmail.com>",
+  "license": "MIT",
+  "private": false
 }

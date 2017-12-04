@@ -19,7 +19,9 @@
   {
     "last": "Rubattel",
     "first": "Thomas",
+    "gender": "male",
     "birthDate": "1979-04-22",
+    "expectedSalary": 200000,
     "jobExperiences": [
       {
         "startDate": "2017-01-01",
@@ -27,13 +29,13 @@
         "company": "Ringier Axel Springer Schweiz AG.",
         "JobDescription": "Web developer",
         "keywords": [
-          "ES2015",
           "React",
           "Frontend",
           "JSX",
           "Redux",
+          "ES2015"
         ]
-      },
+      }
     ],
     "education": [
       {
@@ -41,8 +43,39 @@
         "endtDate": "2015-01-01",
         "title": "Master of Science",
         "school": "University of Lausane",
-        "speciality": "Information systems",
-      },
+        "speciality": "Information systems"
+      }
+    ]
+  },
+  {
+    "last": "Dimitrov",
+    "first": "Grichka",
+    "gender": "male",
+    "birthDate": "1992-10-22",
+    "expectedSalary": 100000,
+    "jobExperiences": [
+      {
+        "startDate": "2017-01-01",
+        "endtDate": "",
+        "company": "Ringier Axel Springer Schweiz AG.",
+        "JobDescription": "Web developer",
+        "keywords": [
+          "React",
+          "Frontend",
+          "JSX",
+          "Redux",
+          "ES2015"
+        ]
+      }
     ],
+    "education": [
+      {
+        "startDate": "2012-01-01",
+        "endtDate": "2015-01-01",
+        "title": "Master of Science",
+        "school": "University of Lausane",
+        "speciality": "Information systems"
+      }
+    ]
   }
 ]

@@ -41,6 +41,37 @@ const dotProduct = ( a, b ) => {
   return acc;
 }
 
+/**
+ * angle
+ *
+ * @desc    compute the angle that forms two vectors in radian
+ * @param   {Array<Number>}     a       - vector a
+ * @param   {Array<Number>}     a       - vector b
+ * @returns {null|Number}
+ */
+
+const angle = ( a, b ) => {
+  if ( !a || !b || !_.isArray(a) || !_.isArray(b) || a.length !== b.length){
+    return null;
+  }
+  return Math.acos( dotProduct(a, b)/ (vectorNorm(a) * vectorNorm(b)))
+}
+
+
+/**
+ * radian to degree
+ *
+ * @desc    convert angle in radian to degree
+ * @param   {Number}     radian       - angle in radian
+ * @returns {Number}
+ */
+
+const radianToDegree = ( radian ) => {
+  return 180 * radian / Math.PI;
+}
+
+
+
 const Candidate =  function(name, birthDate) {
   this.name = name,
   this.birthDate = birthDate,
@@ -74,5 +105,7 @@ const Experiences =  ( (jobs) => {
 
 module.exports = {
   vectorNorm,
-  dotProduct
+  dotProduct,
+  angle,
+  radianToDegree
 }

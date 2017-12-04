@@ -27,7 +27,9 @@ triplets.forEach ( (triplet) => {
   console.log("_______________________");
 });
 
-console.log( "dot product", utils.dotProduct( [2, 3, 0], [3, 5, 9]) );
+console.log( "angle", utils.angle( [8, 0], [7 , -4]) );
+console.log( "angle 45° ", utils.radianToDegree( utils.angle( [2, 2], [5 , 0]) ));
+console.log( "angle 315° ", utils.radianToDegree( utils.angle( [5, 0], [2 , -2] ) ));
 
 const allProfiles = [
   {

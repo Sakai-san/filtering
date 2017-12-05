@@ -32,13 +32,7 @@ const dotProduct = ( a, b ) => {
   if ( !a || !b || !_.isArray(a) || !_.isArray(b) || a.length !== b.length){
     return null;
   }
-  const size  = a.length;
-  let i       = 0;
-  let acc     = 0;
-  for( i; i < size; i++){
-    acc = acc + a[i]*b[i];
-  }
-  return acc;
+  return a.reduce( (memo, eleement, index) => memo+a[index]*b[index], 0);
 }
 
 /**
@@ -57,7 +51,6 @@ const angle = ( a, b ) => {
   return Math.acos( dotProduct(a, b)/ (vectorNorm(a) * vectorNorm(b)))
 }
 
-
 /**
  * radian to degree
  *
@@ -72,7 +65,7 @@ const radianToDegree = ( radian ) => {
 
 
 
-const Candidate =  function(name, birthDate) {
+const Candidate = function(name, birthDate) {
   this.name = name,
   this.birthDate = birthDate,
   this.getAge = () => {
@@ -82,7 +75,7 @@ const Candidate =  function(name, birthDate) {
 };
 
 
-const Job =  function(startDate, endDate, jobDescription, company) {
+const Job = function(startDate, endDate, jobDescription, company) {
   this.startDate = startDate,
   this.birthDate = endDate,
   this.getDuration = () => {

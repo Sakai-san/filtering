@@ -1,4 +1,4 @@
-const _ = require('../node_modules/underscore');
+const _ = require('underscore');
 
 
 /**
@@ -10,7 +10,7 @@ const _ = require('../node_modules/underscore');
  */
 
  const vectorNorm = ( vector ) => {
-   if ( !vector || !_.isArray(vector) ){
+   if ( !_.isArray(vector) ){
      return null;
    }
   const squareSum = vector
@@ -29,7 +29,7 @@ const _ = require('../node_modules/underscore');
  */
 
 const dotProduct = ( a, b ) => {
-  if ( !a || !b || !_.isArray(a) || !_.isArray(b) || a.length !== b.length){
+  if ( !_.isArray(a) || !_.isArray(b) || a.length !== b.length ){
     return null;
   }
   return a.reduce( (memo, eleement, index) => memo+a[index]*b[index], 0);
@@ -45,7 +45,7 @@ const dotProduct = ( a, b ) => {
  */
 
 const angle = ( a, b ) => {
-  if ( !a || !b || !_.isArray(a) || !_.isArray(b) || a.length !== b.length){
+  if ( !_.isArray(a) || !_.isArray(b) || a.length !== b.length ){
     return null;
   }
   return Math.acos( dotProduct(a, b)/ (vectorNorm(a) * vectorNorm(b)))
@@ -66,12 +66,15 @@ const radianToDegree = ( radian ) => {
 /**
  * object to array
  *
- * @desc    create an array with object value keeping key order
+ * @desc    create an array out of object's value. Keeps key order
  * @param   {Object}      obj       - any object
- * @returns {Array}
+ * @returns {null|Array}
  */
 
 const objectToArray = ( obj ) => {
+  if ( !_.isObject(obj) ){
+    return null;
+  }
   const keys = Object.keys( obj );
   keys.sort();
   return keys.map( (key) => obj[key] );
@@ -89,9 +92,9 @@ const objectToArray = ( obj ) => {
 const profilesComparison = ( wishedProfile, candidateProfiles ) =>
   _.chain(
     candidateProfiles.map( (candidateProfile) => (
-      {...candidateProfile, angle: angle(
-          objectToArray(wishedProfile.scalars), objectToArray(candidateProfile.scalars)
-        )
+      {
+        ...candidateProfile,
+        angle: angle( objectToArray(wishedProfile.scalars), objectToArray(candidateProfile.scalars))
       }
     ))
   )

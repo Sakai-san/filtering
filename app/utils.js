@@ -1,4 +1,4 @@
-const _ = require('../node_modules/lodash');
+const _ = require('../node_modules/underscore');
 
 
 /**
@@ -64,24 +64,39 @@ const radianToDegree = ( radian ) => {
 }
 
 /**
+ * object to array
+ *
+ * @desc    create an array with object value keeping key order
+ * @param   {Object}      obj       - any object
+ * @returns {Array}
+ */
+
+const objectToArray = ( obj ) => {
+  const keys = Object.keys( obj );
+  keys.sort();
+  return keys.map( (key) => obj[key] );
+}
+
+/**
  * profiles comparison
  *
- * @desc    compare all profiles against the wished one
- * @param   {Object}            radian       - angle in radian
- * @param   {Array<Object>}     radian       - angle in radian
+ * @desc    compare all profiles against the wished one, returns from closest to farthest
+ * @param   {Object}            wishedProfile       - wished profile
+ * @param   {Array<Object>}     candidateProfiles   - all profiles
  * @returns {Array<Object>}
  */
 
-const profilesComparison = ( wishedProfile, candidateProfiles ) => {
-  candidateProfiles.map( (candidateProfile) => (
+const profilesComparison = ( wishedProfile, candidateProfiles ) =>
+  _.chain(
+    candidateProfiles.map( (candidateProfile) => (
       {...candidateProfile, angle: angle(
-        Object.value(wishedProfile.scalars), Object.value(candidateProfile.scalars)
+          objectToArray(wishedProfile.scalars), objectToArray(candidateProfile.scalars)
+        )
       }
-    )
-  );
-}
-
-
+    ))
+  )
+  .sortBy('angle')
+  .value();
 
 const Candidate = function(name, birthDate) {
   this.name = name,
@@ -118,5 +133,6 @@ module.exports = {
   vectorNorm,
   dotProduct,
   angle,
-  radianToDegree
+  radianToDegree,
+  profilesComparison
 }

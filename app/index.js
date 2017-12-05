@@ -34,11 +34,11 @@ console.log( "angle 315° ", utils.radianToDegree( utils.angle( [5, 0], [2 , -2]
 
 const allProfiles = [
   {
-    name: "thomas",
+    name: "michelle",
     scalars : {
-      age: 38,
-      expectedSalary: 200000,
-      gender: 1,
+      age: 90,
+      expectedSalary: 60000,
+      gender: 0,
     }
   },
   {
@@ -50,11 +50,11 @@ const allProfiles = [
     }
   },
   {
-    name: "michelle",
+    name: "thomas",
     scalars : {
-      age: 90,
-      expectedSalary: 60000,
-      gender: 0,
+      age: 38,
+      expectedSalary: 200000,
+      gender: 1,
     }
   },
 ];
@@ -66,6 +66,8 @@ const wishedProfile = {
     gender: 0,
   }
 };
+
+console.log( utils.profilesComparison(wishedProfile, allProfiles ) );
 
 console.log(
   'toma current job',

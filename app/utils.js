@@ -24,7 +24,7 @@ const _ = require('../node_modules/lodash');
  *
  * @desc    compute the dot product of two vectors both with n components
  * @param   {Array<Number>}     a       - vector a
- * @param   {Array<Number>}     a       - vector b
+ * @param   {Array<Number>}     b       - vector b
  * @returns {null|Number}
  */
 
@@ -46,7 +46,7 @@ const dotProduct = ( a, b ) => {
  *
  * @desc    compute the angle that forms two vectors in radian
  * @param   {Array<Number>}     a       - vector a
- * @param   {Array<Number>}     a       - vector b
+ * @param   {Array<Number>}     b       - vector b
  * @returns {null|Number}
  */
 

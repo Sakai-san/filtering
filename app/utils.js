@@ -63,6 +63,24 @@ const radianToDegree = ( radian ) => {
   return 180 * radian / Math.PI;
 }
 
+/**
+ * profiles comparison
+ *
+ * @desc    compare all profiles against the wished one
+ * @param   {Object}            radian       - angle in radian
+ * @param   {Array<Object>}     radian       - angle in radian
+ * @returns {Array<Object>}
+ */
+
+const profilesComparison = ( wishedProfile, candidateProfiles ) => {
+  candidateProfiles.map( (candidateProfile) => (
+      {...candidateProfile, angle: angle(
+        Object.value(wishedProfile.scalars), Object.value(candidateProfile.scalars)
+      }
+    )
+  );
+}
+
 
 
 const Candidate = function(name, birthDate) {

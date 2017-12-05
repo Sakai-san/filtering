@@ -27,22 +27,44 @@ triplets.forEach ( (triplet) => {
   console.log("_______________________");
 });
 
-console.log( "angle", utils.angle( [8, 0], [7 , -4]) );
+console.log( "angle 180° ", utils.radianToDegree(utils.angle( [8, 0], [-8 , 0 ]) ));
+console.log( "angle 90° ", utils.radianToDegree(utils.angle( [1, 0], [0 , 1]) ));
 console.log( "angle 45° ", utils.radianToDegree( utils.angle( [2, 2], [5 , 0]) ));
 console.log( "angle 315° ", utils.radianToDegree( utils.angle( [5, 0], [2 , -2] ) ));
 
 const allProfiles = [
   {
     name: "thomas",
-    age : 38,
-    expectedSalary: 200000,
-    gender: 'male',
-  }
-]
+    scalars : {
+      age: 38,
+      expectedSalary: 200000,
+      gender: 1,
+    }
+  },
+  {
+    name: "dimitri",
+    scalars : {
+      age: 22,
+      expectedSalary: 240000,
+      gender: 1,
+    }
+  },
+  {
+    name: "michelle",
+    scalars : {
+      age: 90,
+      expectedSalary: 60000,
+      gender: 0,
+    }
+  },
+];
 
 const wishedProfile = {
-  age : 24,
-  expectedSalary : 120000,
+  scalars: {
+    age: 24,
+    expectedSalary: 120000,
+    gender: 0,
+  }
 };
 
 console.log(

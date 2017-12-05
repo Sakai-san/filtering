@@ -1,5 +1,16 @@
 const _ = require('underscore');
 
+/**
+ * radian to degree
+ *
+ * @desc    convert angle in radian to degree
+ * @param   {Number}     radian       - angle in radian
+ * @returns {null|Number}
+ */
+
+const radianToDegree = ( radian ) => {
+  return _.isNumber(radian) ? 180 * radian / Math.PI : null;
+}
 
 /**
  * vector norm
@@ -10,7 +21,7 @@ const _ = require('underscore');
  */
 
  const vectorNorm = ( vector ) => {
-   if ( !_.isArray(vector) ){
+   if ( !_.isArray(vector) || vector.length === 0 ){
      return null;
    }
   const squareSum = vector
@@ -29,7 +40,7 @@ const _ = require('underscore');
  */
 
 const dotProduct = ( a, b ) => {
-  if ( !_.isArray(a) || !_.isArray(b) || a.length !== b.length ){
+  if ( !_.isArray(a) || !_.isArray(b) || a.length !== b.length || a.length === 0){
     return null;
   }
   return a.reduce( (memo, eleement, index) => memo+a[index]*b[index], 0);
@@ -45,22 +56,12 @@ const dotProduct = ( a, b ) => {
  */
 
 const angle = ( a, b ) => {
-  if ( !_.isArray(a) || !_.isArray(b) || a.length !== b.length ){
+  if ( !_.isArray(a) || !_.isArray(b) || a.length !== b.length || a.length === 0){
     return null;
   }
-  return Math.acos( dotProduct(a, b)/ (vectorNorm(a) * vectorNorm(b)))
-}
-
-/**
- * radian to degree
- *
- * @desc    convert angle in radian to degree
- * @param   {Number}     radian       - angle in radian
- * @returns {Number}
- */
-
-const radianToDegree = ( radian ) => {
-  return 180 * radian / Math.PI;
+  const normA = vectorNorm(a);
+  const normB = vectorNorm(b);
+  return normA === 0 || normB === 0 ? 0 : Math.acos( dotProduct(a, b) / (normA * normB ));
 }
 
 /**
@@ -133,9 +134,10 @@ const Experiences =  ( (jobs) => {
 
 
 module.exports = {
+  radianToDegree,
   vectorNorm,
   dotProduct,
   angle,
-  radianToDegree,
+  objectToArray,
   profilesComparison
 }

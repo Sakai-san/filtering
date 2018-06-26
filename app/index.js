@@ -7,23 +7,35 @@ const allProfiles = [
     name: "michelle",
     scalars : {
       age: 90,
-      expectedSalary: 60000,
-      gender: 0,
+      react: 2,
+      frontend: 0,
+      gender: 1,
     }
   },
   {
     name: "dimitri",
     scalars : {
       age: 22,
-      expectedSalary: 240000,
+      react: 0,
+      frontend: 3,
       gender: 1,
+    }
+  },
+  {
+    name: "dimitra",
+    scalars : {
+      age: 22,
+      react: 0,
+      frontend: 3,
+      gender: 0
     }
   },
   {
     name: "thomas",
     scalars : {
       age: 38,
-      expectedSalary: 200000,
+      react: 0.5,
+      frontend: 0,
       gender: 1,
     }
   },
@@ -32,8 +44,9 @@ const allProfiles = [
 const wishedProfile = {
   scalars: {
     age: 24,
-    expectedSalary: 120000,
-    gender: 0,
+    react: 1,
+    frontend: 3,
+    gender: 0
   }
 };
 
